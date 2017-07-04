@@ -9,9 +9,9 @@ names = []
 pops = []
 lats = []
 lons = []
-file = "/Users/hsw/Desktop/typhoontrack.txt"
-title = 'Typhoon \'Nammadol\' future 24 hour track forecast\nInit time: 201707041400BJY  Meteorological Service Center of HSEFZ'
-save = '/Users/hsw/Desktop/sample.png'
+file = ''
+title = '@Louis_He'
+save = ''
 fh = open(file)
 for line in fh:
     info = line.split()
