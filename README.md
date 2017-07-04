@@ -3,4 +3,5 @@
 2. Notice: The program uses python3!
 3. The program needs libs: Basemap, matplotlib, and numpy
 4. The variables in the program 'file', 'title', and 'save' respectively means the track information text file(typhoontrack.txt is a sample), the title of this graph, and where you want to save the graph.
-4. Feel free to change the code!
+5. sample.png is a sample graph.
+6. Feel free to change the code!
