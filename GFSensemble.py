@@ -61,11 +61,13 @@ while (html.find('\n')!=-1):
     hours.append(info[5].replace(' ',''))
     intensity.append(float(info[8].replace(' ','')))
 
-    lat = float((info[6].replace(' ',''))[:-1])
+    if (info[6].replace(' ', ''))[:-1] != '':
+        lat = float((info[6].replace(' ',''))[:-1])
     if (info[6].replace(' ',''))[-1] == 'S': lat = -lat
     lats.append(lat/10)
 
-    lon = float((info[7].replace(' ',''))[:-1])
+    if (info[7].replace(' ', ''))[:-1] != '':
+        lon = float((info[7].replace(' ',''))[:-1])
     if (info[7].replace(' ',''))[-1] == 'W': lon = -lon + 360.0
     lons.append(lon/10)
 
@@ -180,9 +182,9 @@ for i, j, k, name, s, h in zip(x, y, intensity, number, sea, hours):
         cs4 = map.scatter(i, j, s=50, marker='o', color='#3CB371')
     if 60 < k and k <= 85:
         cs5 = map.scatter(i, j, s=60, marker='o', color='#FFA500')
-    if 85 <= k and k <= 105:
+    if 85 <= k and k <= 100:
         cs5 = map.scatter(i, j, s=60, marker='o', color='#FF00FF')
-    if 105 < k:
+    if 100 < k:
         cs6 = map.scatter(i, j, s=60, marker='o', color='#DC143C')
 
 print (" CREATING DIAGRAM...")

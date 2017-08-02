@@ -19,9 +19,13 @@ file = "/Users/hsw/Desktop/historytrack.txt"
 inittime = ''
 title = ''
 save = '/Users/hsw/Desktop/sample.png'
+author = ''
 
 # ============================================# input time
 inittime = input("Enter Init time:(YYYYMMDDHH)");
+author = input("author(can remain blank):");
+if author == '':
+    author = 'Meteorological Service Center of HSEFZ'
 # ============================================# read data
 fh = open(file)
 for line in fh:
@@ -64,7 +68,7 @@ plt.figure(figsize=(14, 9), dpi=80)
 axes = plt.subplot(111)
 # set up map projection with
 # use low resolution coastlines.
-map = Basemap(llcrnrlon=100, llcrnrlat=5, urcrnrlon=160, urcrnrlat=45, \
+map = Basemap(llcrnrlon=100, llcrnrlat=5, urcrnrlon=170, urcrnrlat=45, \
               rsphere=(6378137.00, 6356752.3142), \
               resolution='l', projection='merc', \
               lat_0=40., lon_0=-20., lat_ts=20.)
@@ -173,14 +177,14 @@ for i, j, k, name, d in zip(x, y, pops, names, data):
         cs4 = map.scatter(i, j, s=50, marker='o', color='#3CB371')
     if 60 < k and k <= 85:
         cs5 = map.scatter(i, j, s=60, marker='o', color='#FFA500')
-    if 85 <= k and k <= 105:
+    if 85 <= k and k <= 100:
         cs5 = map.scatter(i, j, s=60, marker='o', color='#FF00FF')
-    if 105 < k:
+    if 100 < k:
         cs6 = map.scatter(i, j, s=60, marker='o', color='#DC143C')
 
 print (lons, lats)
 
-title = 'Typhoon \'' + title_name + '\' history track and forecast\nForecast Initial time: ' + inittime + '00UTC\nMeteorological Service Center of HSEFZ'
+title = 'Typhoon \'' + title_name + '\' history track and forecast\nForecast Initial time: ' + inittime + '00UTC\n' + author
 
 
 
